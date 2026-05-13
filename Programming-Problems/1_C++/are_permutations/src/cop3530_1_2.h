@@ -28,3 +28,26 @@
         Output: true
 */
 
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+bool arePermutations(std::vector<std::string> strs) {
+    // Your code here
+    if (strs.size() == 1) {
+        return true;
+    }
+
+    string s = strs[0];
+    sort(s.begin(), s.end());
+    for (int i = 1; i < strs.size(); i++) {
+        string word = strs[i];
+        sort(word.begin(), word.end());
+        if (s != word) {
+            return false;
+        }
+    }
+    return true;
+}
