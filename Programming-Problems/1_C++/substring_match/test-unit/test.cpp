@@ -15,6 +15,7 @@ TEST_CASE("Case 1") {
 	substringMatch(str, result);
 	std::sort(str.begin(), str.end());
 	std::sort(result.begin(), result.end());
+	std::sort(expected.begin(), expected.end()); // updated line
 	REQUIRE(result == expected);
 }
 

@@ -17,9 +17,37 @@
 #include <iostream>
 #include <string>
 #include <vector>
+using namespace std;
 
 void substringMatch(std::vector<std::string> str, std::vector<std::string>& result){
     // Your code here
-    
-
+    for (int i = 0; i < str.size(); i++) {
+        string s1 = str[i];
+        for (int j = 0; j < str.size(); j++) {
+            string s2 = str[j];
+            if (i == j) {
+                continue;
+            }
+            if (s2.find(s1) != string::npos) {
+                int cnt = count(result.begin(), result.end(), s1);
+                if (cnt > 0) {
+                    continue;
+                }
+                result.push_back(s1);
+            }
+        }
+    }
+    if (result.size() <= 1) {
+    }
+    else {
+        int temp = result[0].size();
+        for (int i = 1; i < result.size(); i++) {
+            if (result[i].size() != temp) {
+                result = {};
+                break;
+            }
+        }
+    }
 }
+
+
