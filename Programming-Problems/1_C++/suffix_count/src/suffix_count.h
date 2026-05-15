@@ -15,8 +15,21 @@
 
 #include <iostream>
 #include <string>
+using namespace std;
 
 int suffixCount(std::string S, int L) {
     // Your code here
-    return 0;
+    int res = 0;
+    string suffix = "";
+
+    for (int i = S.size() - L; i < S.size(); i++) {
+        suffix += S[i];
+    }
+
+    for (int i = 0; i < S.size(); i++) {
+        if (S.substr(i, L) == suffix) {
+            res ++;
+        }
+    }
+    return res;
 }
