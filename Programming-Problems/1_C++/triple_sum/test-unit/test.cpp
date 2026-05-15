@@ -10,7 +10,7 @@
 TEST_CASE("Function: Test 1")
 {
     std::vector<int> nums = {-1, 0, 1, 2, -3, 2};
-    std::vector<std::vector<int>> expected = {{-1, 0, 1}, {1, 2, -3}};
+    std::vector<std::vector<int>> expected = {{-3, 1, 2}, {-1, 0, 1}}; // updated test case since it only works if you use three for loops not two pointer approach
     REQUIRE(threeSum(nums) == expected);
 }
 
